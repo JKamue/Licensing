@@ -25,22 +25,30 @@ namespace Licensing.Client
 
         private void btnVerifyLicense_Click(object sender, EventArgs e)
         {
-            var sr = new StringReader(PublicKey);
-            var xs = new System.Xml.Serialization.XmlSerializer(typeof(RSAParameters));
-            var publicKey = (RSAParameters)xs.Deserialize(sr);
-
-            RSACryptoServiceProvider RSAalg = new RSACryptoServiceProvider(4096);
-            RSAalg.ImportParameters(publicKey);
-            var test = RSAalg.VerifyData(GetBytes(lblHardwareOutput.Text), SHA256.Create(), Convert.FromBase64String(tbxLicense.Text));
-
-
-            if (test)
+            try
             {
-                lblLicenseOutput.Text = "OK";
+                var sr = new StringReader(PublicKey);
+                var xs = new System.Xml.Serialization.XmlSerializer(typeof(RSAParameters));
+                var publicKey = (RSAParameters) xs.Deserialize(sr);
+
+                RSACryptoServiceProvider RSAalg = new RSACryptoServiceProvider(4096);
+                RSAalg.ImportParameters(publicKey);
+                var test = RSAalg.VerifyData(GetBytes(lblHardwareOutput.Text), SHA256.Create(),
+                    Convert.FromBase64String(tbxLicense.Text));
+
+
+                if (test)
+                {
+                    lblLicenseOutput.Text = "OK";
+                }
+                else
+                {
+                    lblLicenseOutput.Text = "nope";
+                }
             }
-            else
+            catch (Exception ex)
             {
-                lblLicenseOutput.Text = "nope";
+                lblLicenseOutput.Text = ex.Message;
             }
         }
     }
