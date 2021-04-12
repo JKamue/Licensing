@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Licensing.Client", "Licensing.Client\Licensing.Client.csproj", "{6EB834F9-53C7-4FC9-BCCF-D3E24BC864B4}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Licensing.Licenser", "Licensing.Licenser\Licensing.Licenser.csproj", "{74FA273D-B735-4F85-A537-86F7C121DB1A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{6EB834F9-53C7-4FC9-BCCF-D3E24BC864B4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6EB834F9-53C7-4FC9-BCCF-D3E24BC864B4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6EB834F9-53C7-4FC9-BCCF-D3E24BC864B4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{74FA273D-B735-4F85-A537-86F7C121DB1A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{74FA273D-B735-4F85-A537-86F7C121DB1A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{74FA273D-B735-4F85-A537-86F7C121DB1A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{74FA273D-B735-4F85-A537-86F7C121DB1A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
