@@ -35,6 +35,7 @@ namespace Licensing.Client
             this.trvHardware = new System.Windows.Forms.TreeView();
             this.lblHardwareOutput = new System.Windows.Forms.Label();
             this.lblLicenseOutput = new System.Windows.Forms.Label();
+            this.btnVerifyLicense = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblHardwareId
@@ -62,9 +63,8 @@ namespace Licensing.Client
             this.tbxLicense.Location = new System.Drawing.Point(221, 35);
             this.tbxLicense.Multiline = true;
             this.tbxLicense.Name = "tbxLicense";
-            this.tbxLicense.Size = new System.Drawing.Size(190, 165);
+            this.tbxLicense.Size = new System.Drawing.Size(190, 136);
             this.tbxLicense.TabIndex = 2;
-            this.tbxLicense.TextChanged += new System.EventHandler(this.tbxLicense_TextChanged);
             // 
             // trvHardware
             // 
@@ -88,11 +88,22 @@ namespace Licensing.Client
             this.lblLicenseOutput.Size = new System.Drawing.Size(189, 227);
             this.lblLicenseOutput.TabIndex = 5;
             // 
+            // btnVerifyLicense
+            // 
+            this.btnVerifyLicense.Location = new System.Drawing.Point(221, 177);
+            this.btnVerifyLicense.Name = "btnVerifyLicense";
+            this.btnVerifyLicense.Size = new System.Drawing.Size(190, 23);
+            this.btnVerifyLicense.TabIndex = 6;
+            this.btnVerifyLicense.Text = "VerifyLicense";
+            this.btnVerifyLicense.UseVisualStyleBackColor = true;
+            this.btnVerifyLicense.Click += new System.EventHandler(this.btnVerifyLicense_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(430, 450);
+            this.Controls.Add(this.btnVerifyLicense);
             this.Controls.Add(this.lblLicenseOutput);
             this.Controls.Add(this.lblHardwareOutput);
             this.Controls.Add(this.trvHardware);
@@ -114,6 +125,7 @@ namespace Licensing.Client
         private System.Windows.Forms.TreeView trvHardware;
         private System.Windows.Forms.Label lblHardwareOutput;
         private System.Windows.Forms.Label lblLicenseOutput;
+        private System.Windows.Forms.Button btnVerifyLicense;
     }
 }
 

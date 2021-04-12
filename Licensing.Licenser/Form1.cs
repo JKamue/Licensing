@@ -19,13 +19,13 @@ namespace Licensing.Licenser
         {
             var sr = new StringReader(PrivateKey);
             var xs = new System.Xml.Serialization.XmlSerializer(typeof(RSAParameters));
-            var privateKey = (RSAParameters)xs.Deserialize(sr);
+            var privateKey = (RSAParameters) xs.Deserialize(sr);
 
             var csp = new RSACryptoServiceProvider(4096);
             csp.ImportParameters(privateKey);
             var id = tbxHardwareId.Text;
-            var bytesPlainTextData = Encoding.Unicode.GetBytes(id);
-            var bytesCypherText = csp.Encrypt(bytesPlainTextData, false);
+            var bytesPlainTextData = Encoding.ASCII.GetBytes(id);
+            var bytesCypherText = csp.SignData(bytesPlainTextData, SHA256.Create());
             var cypherText = Convert.ToBase64String(bytesCypherText);
             lblOutput.Text = cypherText;
         }
